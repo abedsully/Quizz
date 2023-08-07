@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
     
     func playSoundCorrect(){
-        guard let url = Bundle.main.url(forResource: "wrong", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "correct", withExtension: "mp3") else { return }
 
             do {
                 try! AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
