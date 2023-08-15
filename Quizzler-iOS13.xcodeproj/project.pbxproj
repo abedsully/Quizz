@@ -10,7 +10,6 @@
 		A098B75C2A813E240016F58D /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A098B75A2A813E240016F58D /* wrong.mp3 */; };
 		A098B75D2A813E240016F58D /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A098B75B2A813E240016F58D /* correct.mp3 */; };
 		A0B68FC52A8B4DF800174B90 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68FC42A8B4DF800174B90 /* ResultViewController.swift */; };
-		A0B68FC72A8B7ADE00174B90 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68FC62A8B7ADE00174B90 /* Score.swift */; };
 		A0B916822A8136EF002E9C12 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B916812A8136EF002E9C12 /* QuizBrain.swift */; };
 		A0B916852A813712002E9C12 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B916842A813712002E9C12 /* Question.swift */; };
 		AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */; };
@@ -25,7 +24,6 @@
 		A098B75A2A813E240016F58D /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		A098B75B2A813E240016F58D /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		A0B68FC42A8B4DF800174B90 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		A0B68FC62A8B7ADE00174B90 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A0B916812A8136EF002E9C12 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		A0B916842A813712002E9C12 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AD4BDE4622D878BA005BA4CC /* Quizzler-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quizzler-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +69,6 @@
 			children = (
 				A0B916812A8136EF002E9C12 /* QuizBrain.swift */,
 				A0B916842A813712002E9C12 /* Question.swift */,
-				A0B68FC62A8B7ADE00174B90 /* Score.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B68FC72A8B7ADE00174B90 /* Score.swift in Sources */,
 				A0B916852A813712002E9C12 /* Question.swift in Sources */,
 				A0B916822A8136EF002E9C12 /* QuizBrain.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* QuizViewController.swift in Sources */,
