@@ -14,6 +14,8 @@ struct Quiz{
     var questionNumber = 0
     var score = 0
     
+    var reachEnd = false
+    
     
     let quiz = [
         Question(q: "Siapakah penulis novel 'Harry Potter'?", a: ["J.K. Rowling", "Stephen King", "George R.R. Martin"], c: "J.K. Rowling"),
@@ -50,6 +52,7 @@ struct Quiz{
         return Float(questionNumber + 1) / Float(quiz.count)
     }
     
+    
     mutating func getScore() -> Int {
         return score
     }
@@ -57,11 +60,12 @@ struct Quiz{
     mutating func nextQuestion() {
         if(questionNumber + 1 < quiz.count){
             questionNumber += 1
+            reachEnd = false
         }
         
         else{
+            reachEnd = true
             questionNumber = 0
-            score = 0
         }
     }
     

@@ -10,7 +10,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     var player: AVAudioPlayer!
     
@@ -45,9 +45,22 @@ class ViewController: UIViewController {
             playSoundWrong()
         }
         
+        if(quiz.questionNumber < 20) {
+            
+        }
+        
         quiz.nextQuestion()
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(UpdateUI), userInfo: nil, repeats: false)
+        
+        if(quiz.reachEnd == true){
+            performSegue(withIdentifier: "goToResult", sender: self)
+            quiz.questionNumber = 0
+            quiz.score = 0
+            
+            UpdateUI()
+        }
+        
     }
     
     @objc func UpdateUI(){
@@ -69,42 +82,22 @@ class ViewController: UIViewController {
     }
     
     func playSoundCorrect(){
-        guard let url = Bundle.main.url(forResource: "correct", withExtension: "mp3") else { return }
-
-            do {
-                try! AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try! AVAudioSession.sharedInstance().setActive(true)
-
-                player = try! AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            }
+        let url = Bundle.main.url(forResource: "correct", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
     
     func playSoundWrong(){
-        guard let url = Bundle.main.url(forResource: "wrong", withExtension: "mp3") else { return }
-
-            do {
-                try! AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try! AVAudioSession.sharedInstance().setActive(true)
-
-                /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-                player = try! AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-                /* iOS 10 and earlier require the following line:
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-
-                guard let player = player else { return }
-
-                player.play()
-
-            }
+        let url = Bundle.main.url(forResource: "wrong", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.score = quiz.getScore()
+        }
+    }
 }
 
